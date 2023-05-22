@@ -5,7 +5,7 @@ workloads = ['workloada', 'workloadb', 'workloadc', 'workloadd', 'workloade', 'w
 
 # Function to execute YCSB commands
 def run_ycsb_command(workload):
-    command = "./bin/ycsb.sh load jdbc mongodb -s -P workloads/" + workload + " > " + workload + "_mongo.txt"
+    command = "./bin/ycsb.sh load mongodb -s -P workloads/" + workload + " > " + workload + "_mongo.txt"
     ret_code = subprocess.call(command, shell=True)
     if ret_code != 0:
         sys.exit("Error executing YCSB command for workload: " + workload)
